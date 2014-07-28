@@ -1,9 +1,11 @@
 package com.androidpositive.dashedview;
 
-import android.support.v7.app.ActionBarActivity;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 
 public class DashedExampleActivity extends ActionBarActivity {
@@ -12,6 +14,11 @@ public class DashedExampleActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashed_example);
+        ImageView image = (ImageView) findViewById(R.id.imageView);
+        DashedLineDrawable lineDrawable = new DashedLineDrawable(DashedExampleActivity.this);
+        lineDrawable.setColor(Color.parseColor("#ffcc0000"));
+        image.setImageDrawable(lineDrawable);
+        image.invalidate();
     }
 
 
